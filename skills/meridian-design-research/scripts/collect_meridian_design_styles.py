@@ -10,8 +10,8 @@ from bs4 import BeautifulSoup
 
 BASE='https://styles.refero.design'
 DISCOVERY=Path('/home/ubuntu/upload/styles.refero.design__q_Notion_1791332316091.html')
-OUT=Path('/home/ubuntu/Meridian-Open-Source/skills/refero-design-research/references/refero-style-library-30.json')
-REPORT=Path('/home/ubuntu/Meridian-Open-Source/skills/refero-design-research/references/refero-style-library-30.md')
+OUT=Path('/home/ubuntu/Meridian-Open-Source/skills/meridian-design-research/references/meridian-design-library-30.json')
+REPORT=Path('/home/ubuntu/Meridian-Open-Source/skills/meridian-design-research/references/meridian-design-library-30.md')
 
 def clean(s: str) -> str:
     return re.sub(r'\s+', ' ', s or '').strip()

@@ -7,10 +7,10 @@ from urllib.parse import urljoin
 import requests
 from bs4 import BeautifulSoup
 
-ROOT=Path('/home/ubuntu/Meridian-Open-Source/skills/refero-design-research')
+ROOT=Path('/home/ubuntu/Meridian-Open-Source/skills/meridian-design-research')
 UPLOAD=Path('/home/ubuntu/upload')
-OUT=ROOT/'references/refero-style-library-expanded.jsonl'
-SUMMARY=ROOT/'references/refero-style-library-expanded.md'
+OUT=ROOT/'references/meridian-design-library-expanded.jsonl'
+SUMMARY=ROOT/'references/meridian-design-library-expanded.md'
 BASE='https://styles.refero.design'
 
 def clean(s): return re.sub(r'\s+',' ',s or '').strip()
