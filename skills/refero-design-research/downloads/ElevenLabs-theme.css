@@ -1,0 +1,55 @@
+/* Reconstructed from the public Refero Tailwind/CSS Variables panels. */
+:root {
+  --color-eggshell: #fdfcfc;
+  --color-warm-taupe: #f5f3f1;
+  --color-stone: #ebe8e4;
+  --color-ink: #000000;
+  --color-graphite: #44403b;
+  --color-smoke: #777169;
+  --color-ash: #a59f97;
+  --color-violet-spark: #0447ff;
+  --color-ember-orange: #ff4704;
+
+  --font-waldenburg: 'Waldenburg', Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-inter: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-geist-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --text-caption: 10px;
+  --text-body-sm: 14px;
+  --text-body: 16px;
+  --text-subheading: 18px;
+  --text-body-lg: 20px;
+  --text-heading-sm: 32px;
+  --text-heading: 36px;
+  --text-display: 48px;
+
+  --leading-caption: 1.6;
+  --leading-body-sm: 1.5;
+  --leading-body: 1.5;
+  --leading-subheading: 1.6;
+  --leading-body-lg: 1.35;
+  --leading-heading-sm: 1.13;
+  --leading-heading: 1.17;
+  --leading-display: 1.08;
+
+  --spacing-unit: 4px;
+  --page-max-width: 1280px;
+  --section-gap: 96px;
+  --card-padding: 32px;
+  --element-gap: 16px;
+
+  --radius-inputs: 4px;
+  --radius-small-elements: 10px;
+  --radius-cards: 20px;
+  --radius-large-cards: 24px;
+  --radius-buttons: 9999px;
+
+  --shadow-subtle: 0 0 1px rgb(0 0 0 / 40%), 0 1px 1px rgb(0 0 0 / 4%), 0 2px 4px rgb(0 0 0 / 4%);
+  --shadow-inset: inset 0 0 0 0.5px rgb(0 0 0 / 7.5%);
+}
+
+.refero-display {
+  font-family: var(--font-waldenburg);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
