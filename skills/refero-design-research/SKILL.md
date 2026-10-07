@@ -14,18 +14,25 @@ Aplicar esta skill cuando el usuario proporcione una página de Refero/Refero St
 - `references/prompt-pack.md`: prompts de componentes y de composición derivados de la referencia.
 - `references/refero-style-library-30.md`: DESIGN.md completo de 49 fichas públicas adicionales, incluyendo Notion, Stripe, Figma, Anthropic, Cohere, Linear, Vercel, OpenAI, Cursor y otras.
 - `references/refero-style-library-30.json`: dataset estructurado con marca, URL, estado y colores detectados.
+- `references/refero-style-library-expanded.md`: índice legible de **656 fichas únicas** descubiertas en las búsquedas públicas solicitadas: Kids & family product, Non-boring enterprise, Neon crypto dark, Friendly startup, Immersive 3D scenes, Like Stripe, Newsletter landing y Bauhaus geometry.
+- `references/refero-style-library-expanded.jsonl`: dataset completo, una línea por ficha, con URL, consultas de descubrimiento, colores hex detectados y DESIGN.md público completo; las 656 fichas respondieron correctamente.
+- `references/refero-web-apps-full-catalog.md` y `references/refero-ios-apps-full-catalog.md`: capturas legibles de los catálogos y categorías visibles de ambas galerías.
+- `references/refero-search-sources.md`: inventario de las capturas de búsqueda realizadas desde la pestaña activa.
 - `scripts/collect_refero_styles.py`: extractor reproducible con concurrencia acotada para nuevas búsquedas de la biblioteca.
+- `scripts/collect_refero_expanded.py`: extractor en lote para consolidar múltiples búsquedas y preservar cada DESIGN.md como JSONL sin truncarlo.
 - `templates/elevenlabs-theme.css`: variables CSS listas para importar.
 - `templates/elevenlabs-tailwind-theme.css`: tokens Tailwind v4 equivalentes.
 - `downloads/ElevenLabs-DESIGN.md` y `downloads/ElevenLabs-theme.css`: copias locales de los artefactos disponibles en los paneles públicos.
+- `downloads/Ramp-DESIGN.md`: DESIGN.md completo de la ficha Ramp solicitada explícitamente.
+- `downloads/Ramp-public-page.html`: snapshot público de Ramp que conserva el contenido serializado de DESIGN.md, Tailwind v4, CSS Variables, Design Tokens, Compact y Extended.
 
 ## Flujo obligatorio
 
 1. Abrir la URL indicada en el navegador del usuario, sin iniciar sesión si no es necesario.
-2. Para lotes de 10+ referencias, descubrir los enlaces desde la biblioteca y procesar las fichas con `scripts/collect_refero_styles.py`; conservar errores explícitos.
-3. Capturar primero la identidad visual, luego las pestañas `DESIGN.md`, `Tailwind v4`, `CSS Variables` y `Design Tokens`.
+2. Para lotes de 10+ referencias, descubrir los enlaces desde la biblioteca y procesar las fichas con `scripts/collect_refero_styles.py` o `scripts/collect_refero_expanded.py`; conservar errores explícitos.
+3. Capturar primero la identidad visual, luego las pestañas `DESIGN.md`, `Tailwind v4`, `CSS Variables`, `Design Tokens`, `Compact` y `Extended`. Cuando una captura serializa paneles no activos, conservar también el HTML fuente para permitir su extracción posterior.
 4. Registrar valores exactos y separar hechos observados de recomendaciones interpretadas.
-5. En una galería, registrar categorías, nombres, descripciones y enlaces públicos visibles; no afirmar que se revisaron páginas individuales que no se abrieron.
+5. En una galería, registrar categorías, nombres, descripciones y enlaces públicos visibles; no afirmar que se revisaron páginas individuales que no se abrieron. Los lotes ampliados se identifican como fichas públicas descubiertas y descargadas, no como auditorías visuales manuales de cada producto.
 6. Convertir la referencia a tokens semánticos antes de escribir componentes.
 7. Implementar con Next.js App Router, TypeScript y Tailwind CSS; evitar CSS monolítico y valores hardcodeados fuera de tokens.
 8. Verificar contraste, responsive behavior, estados hover/focus/disabled, accesibilidad y rendimiento.
