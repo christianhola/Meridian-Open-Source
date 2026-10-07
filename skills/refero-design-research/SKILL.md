@@ -12,6 +12,9 @@ Aplicar esta skill cuando el usuario proporcione una página de Refero/Refero St
 - `references/elevenlabs-style-reference.md`: extracción de la página ElevenLabs Style Reference indicada por el usuario.
 - `references/refero-web-apps-catalog.md`: catálogo público visible en Refero Web Apps al momento de la investigación.
 - `references/prompt-pack.md`: prompts de componentes y de composición derivados de la referencia.
+- `references/refero-style-library-30.md`: DESIGN.md completo de 49 fichas públicas adicionales, incluyendo Notion, Stripe, Figma, Anthropic, Cohere, Linear, Vercel, OpenAI, Cursor y otras.
+- `references/refero-style-library-30.json`: dataset estructurado con marca, URL, estado y colores detectados.
+- `scripts/collect_refero_styles.py`: extractor reproducible con concurrencia acotada para nuevas búsquedas de la biblioteca.
 - `templates/elevenlabs-theme.css`: variables CSS listas para importar.
 - `templates/elevenlabs-tailwind-theme.css`: tokens Tailwind v4 equivalentes.
 - `downloads/ElevenLabs-DESIGN.md` y `downloads/ElevenLabs-theme.css`: copias locales de los artefactos disponibles en los paneles públicos.
@@ -19,12 +22,13 @@ Aplicar esta skill cuando el usuario proporcione una página de Refero/Refero St
 ## Flujo obligatorio
 
 1. Abrir la URL indicada en el navegador del usuario, sin iniciar sesión si no es necesario.
-2. Capturar primero la identidad visual, luego las pestañas `DESIGN.md`, `Tailwind v4`, `CSS Variables` y `Design Tokens`.
-3. Registrar valores exactos y separar hechos observados de recomendaciones interpretadas.
-4. En una galería, registrar categorías, nombres, descripciones y enlaces públicos visibles; no afirmar que se revisaron páginas individuales que no se abrieron.
-5. Convertir la referencia a tokens semánticos antes de escribir componentes.
-6. Implementar con Next.js App Router, TypeScript y Tailwind CSS; evitar CSS monolítico y valores hardcodeados fuera de tokens.
-7. Verificar contraste, responsive behavior, estados hover/focus/disabled, accesibilidad y rendimiento.
+2. Para lotes de 10+ referencias, descubrir los enlaces desde la biblioteca y procesar las fichas con `scripts/collect_refero_styles.py`; conservar errores explícitos.
+3. Capturar primero la identidad visual, luego las pestañas `DESIGN.md`, `Tailwind v4`, `CSS Variables` y `Design Tokens`.
+4. Registrar valores exactos y separar hechos observados de recomendaciones interpretadas.
+5. En una galería, registrar categorías, nombres, descripciones y enlaces públicos visibles; no afirmar que se revisaron páginas individuales que no se abrieron.
+6. Convertir la referencia a tokens semánticos antes de escribir componentes.
+7. Implementar con Next.js App Router, TypeScript y Tailwind CSS; evitar CSS monolítico y valores hardcodeados fuera de tokens.
+8. Verificar contraste, responsive behavior, estados hover/focus/disabled, accesibilidad y rendimiento.
 
 ## Reglas de interpretación
 
